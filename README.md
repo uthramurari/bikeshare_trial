@@ -1,17 +1,19 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
-
 ### Date created
-Include the date you created this project and README file.
+25 May 2023
 
 ### Project Title
-Replace the Project Title
+bikeshare_uthra
 
 ### Description
-Describe what your project is about and what it does
+This is a interactive python executable file that allows the user to explore US bikeshare data of three cities - New York city, Chicago and Washington during Januray to June 2017.
+The user is allowed to specify the city, month and the day of the week based on which summary statistics is generated.
 
 ### Files used
-Include the files used
+Python executable file: bikeshare.py
+
+Data files: chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Udacity has given the guidance on the basic ideas and skeleton of the project which was later enhanced by Uthra as part of Udacity Python for DataScience Nanodegree program.
+A special thanks to Bertelsmann co. for offering the scholarship in the name of Bertelsmann Next Generation Tech Booster Scholarship Program.
 
