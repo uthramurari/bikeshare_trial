@@ -5,8 +5,32 @@
 bikeshare_uthra
 
 ### Description
-This is a interactive python executable file that allows the user to explore US bikeshare data of three cities - New York city, Chicago and Washington during Januray to June 2017.
-The user is allowed to specify the city, month and the day of the week based on which summary statistics is generated.
+The project allows the user to interactively explore US bikeshare data of three cities - New York city, Chicago and Washington during Januray to June 2017. 
+<br>
+
+The user is allowed to specify the city, month and the day of the week based on which the following summary statistics are generated.
+
+#### Time Statistics:
+    - The most common month
+    - The most common day of the week
+    - The most common start hour
+
+#### Station Statistics:
+    - The most start station
+    - The most end station
+    - The most common start-end station combination
+
+#### Trip duration Statistics:
+    - The total trip duration of all the rides
+    - The mean trip duration
+
+#### User Statistics:
+    - The count of user type
+    - The count of gender
+    - The Birth Year details
+        - Max year of birth
+        - Min year of birth
+        - Most common year of birth
 
 ### Files used
 Python executable file: bikeshare.py
