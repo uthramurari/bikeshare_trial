@@ -77,7 +77,7 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+    """Displays statistics on the most frequent times of travel in the chosen subset of data."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
@@ -102,7 +102,7 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """Displays statistics on the most popular stations and trip in the chosen subset of data."""
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
@@ -127,7 +127,7 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    """Displays statistics on the total and average trip duration of the chosen subset of data"""
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
@@ -142,7 +142,10 @@ def trip_duration_stats(df):
 
 
 def user_stats(df, city):
-    """Displays statistics on bikeshare users."""
+    """Displays statistics on bikeshare users.
+     > Count of: User type, Gender type
+     > Statistics based on year of birth - max, min and most common year of birth
+     """
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
@@ -171,8 +174,8 @@ def user_stats(df, city):
     print('-' * 40)
 
 def print_records(df):
-    """Prints the first 5 records and
-    prints the next 5 based on user response"""
+    """Prints the first 5 records by default and
+    prints the next 5 records based on user response"""
 
     print('\nDisplaying the first 5 records:')
     for i in range(0, len(df), 5):
