@@ -8,6 +8,23 @@ CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
 
+def check_user_entry(prompt, valid_entries):
+    """
+    Args:
+        (str) prompt: Specific prompt text
+        (list) valid_entries: List of all possible valid entries
+
+    Returns:
+        (str) user_input: Valid user input
+
+    """
+    user_input = input(prompt).lower()
+    while user_input not in valid_entries:
+        print('Wrong Input. Please try again')
+        user_input = input(prompt).lower()
+    return user_input
+
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -18,33 +35,31 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    while True:
-        print('\nCity List:\n chicago\n new york city\n washington\n')
-        city = input('Enter city for which you need data: ').lower()
-        if city in CITY_DATA.keys():
-            break
-        print('Wrong Input. Please try again')
+    # get user input for city (chicago, new york city, washington).
+
+    valid_entries = CITY_DATA.keys()
+    print('\nCity list:')
+    print(*valid_entries, sep=', ')
+    prompt = 'Select a city: '
+    city = check_user_entry(prompt, valid_entries)
 
     # get user input for month (all, january, february, ... , june)
-    while True:
-        month_list = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
-        print('\nMonth list:')
-        print(*month_list, sep=', ')
-        month = input('Enter month for which you need data: ').lower()
-        if month in month_list:
-            break
-        print('Wrong Input. Please try again')
+
+    month_list = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+    valid_entries = month_list
+    print('\nMonth list:')
+    print(*valid_entries, sep=', ')
+    prompt = 'Select a month for which you need data: '
+    month = check_user_entry(prompt, valid_entries)
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
-    while True:
-        weekday_list = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-        print('\nDay of Week list:')
-        print(*weekday_list, sep=', ')
-        day = input('Enter weekday for which you need data: ').lower()
-        if day in weekday_list:
-            break
-        print('Wrong Input. Please try again')
+
+    weekday_list = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    valid_entries = weekday_list
+    print('\nDay of Week list:')
+    print(*valid_entries, sep=', ')
+    prompt = 'Select a weekday for which you need data: '
+    day = check_user_entry(prompt, valid_entries)
 
     print('-' * 40)
     return city, month, day
@@ -171,18 +186,20 @@ def user_stats(df, city):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
 
+
 def print_records(df):
     """Prints the first 5 records and
     prints the next 5 based on user response"""
 
     print('\nDisplaying the first 5 records:')
     for i in range(0, len(df), 5):
-        print(tabulate(df[i:i+5], headers=df.columns))
+        print(tabulate(df[i:i + 5], headers=df.columns))
         next_5 = input('Do you want to display the next 5 records? Y / N : ')
-        if next_5 in ('Y','y'):
+        if next_5 in ('Y', 'y'):
             continue
         else:
             break
+
 
 def main():
     while True:
