@@ -2,6 +2,7 @@ import numpy as np
 import time
 import pandas as pd
 import calendar
+from tabulate import tabulate
 
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
@@ -176,7 +177,7 @@ def print_records(df):
 
     print('\nDisplaying the first 5 records:')
     for i in range(0, len(df), 5):
-        print(df[i:i+5])
+        print(tabulate(df[i:i+5], headers=df.columns))
         next_5 = input('Do you want to display the next 5 records? Y / N : ')
         if next_5 in ('Y','y'):
             continue
